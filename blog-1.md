@@ -8,7 +8,7 @@ But then I learned that this is actually a really bad habit which is shown in th
 
 ## The Problem with `any`
 
-When you use `any`, TypeScript basically just... gives up. It stops checking that type entirely. So you can do whatever you want with it and TypeScript won't say anything — until it crashes at runtime.
+When you use `any`, TypeScript basically just... gives up. It stops checking that type entirely. So you can do whatever you want with it and TypeScript didnt show any error, but it shows error after I run it.
 
 Here's an example that actually happened to me (well, something similar):
 
@@ -20,11 +20,11 @@ function processInput(data: any) {
 processInput(42); // crashes! numbers don't have toUpperCase
 ```
 
-TypeScript didn't warn me. It just let me write broken code. That's the problem — `any` turns off the type checker for that value. It's like the whole point of TypeScript just disappears. Just like in the module, the instructor Mezba vai told us typescript means type security but `any` does not providing the security we wanted
+TypeScript didn't warn me. It just let me write broken code. That's the problem with `any` turns off the type checker for that value. It's like the whole point of TypeScript just disappears. Just like in the module, the instructor `Mezba vai told us typescript means type security but `any` does not providing the security we wanted
 
 ## So What is `unknown`?
 
-`unknown` is basically TypeScript saying "I don't know what this is, and I'm NOT going to let you use it until you prove what it is."
+ `unknown` type in TypeScript means that the value's type has not yet been verified, or we dont know it yet.
 
 Same example but with `unknown`:
 
