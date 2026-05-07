@@ -4,8 +4,8 @@
 
 One thing I didn't understand when I started TypeScript was why people kept talking about "don't repeat yourself" (DRY). I really did not understand the importance of it
 
-Then I discovered `Pick` and `Omit` — which is shown in the Module 2.
- two built-in TypeScript utility types — and suddenly it clicked. Instead of writing the same fields in five different interfaces, you just create one big master interface and slice it up however you need. Let me show you what I mean.
+Then I discovered `Pick` and `Omit`  which is shown in the Module 2.
+ two built-in TypeScript utility types  and suddenly it clicked. Instead of writing the same fields in five different interfaces, you just create one big master interface and slice it up however you need. Let me show you what I mean.
 
 ## The Problem I Kept Running Into
 
@@ -28,7 +28,7 @@ Now in different parts of the app you need slightly different versions of this. 
 
 Before I knew about utility types, I was literally copy-pasting the interface and deleting fields. Which is terrible. If I rename `email` to `emailAddress` in `User`, I have to update every single copy. I missed one once and spent 30 minutes debugging.
 
-## `Pick` — Just Take What You Need
+## `Pick`  Just Take What You Need
 
 `Pick<T, K>` lets you create a new type by picking specific fields from an existing type. That's it.
 
@@ -50,7 +50,7 @@ type PublicProfile = Pick<User, "name" | "email">;
 
 Now `UserCard` is always based on `User`. If `User` changes, TypeScript will immediately tell me if something breaks. No more manual syncing.
 
-## `Omit` — Just Remove What You Don't Want
+## `Omit`  Just Remove What You Don't Want
 
 `Omit<T, K>` is kind of the opposite. Instead of saying "give me these fields", you say "give me everything EXCEPT these fields."
 
@@ -78,7 +78,7 @@ function createUser(payload: Omit<User, "id" | "createdAt">): User {
 }
 
 function showUserCard(user: Pick<User, "id" | "name">): string {
-  return `#${user.id} — ${user.name}`;
+  return `#${user.id}  ${user.name}`;
 }
 ```
 
