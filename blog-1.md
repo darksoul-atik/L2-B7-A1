@@ -4,7 +4,7 @@
 
 Okay so when I first started learning TypeScript, I thought `any` was kind of a lifesaver. Like whenever I didn't know what type something was, I just slapped `any` on it and moved on. No errors, no complaints. Felt great honestly.
 
-But then I learned that this is actually a really bad habit. And there's a much better option called `unknown`. In this post I want to explain why `any` is dangerous and how `unknown` with type narrowing is the right way to handle data you're not sure about.
+But then I learned that this is actually a really bad habit which is shown in the module 1. And there's a much better option called `unknown`. In this post I want to explain why `any` is dangerous and how `unknown` with type narrowing is the right way to handle data you're not sure about.
 
 ## The Problem with `any`
 
@@ -20,7 +20,7 @@ function processInput(data: any) {
 processInput(42); // crashes! numbers don't have toUpperCase
 ```
 
-TypeScript didn't warn me. It just let me write broken code. That's the problem — `any` turns off the type checker for that value. It's like the whole point of TypeScript just disappears.
+TypeScript didn't warn me. It just let me write broken code. That's the problem — `any` turns off the type checker for that value. It's like the whole point of TypeScript just disappears. Just like in the module, the instructor Mezba vai told us typescript means type security but `any` does not providing the security we wanted
 
 ## So What is `unknown`?
 
